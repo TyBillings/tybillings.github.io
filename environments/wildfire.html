@@ -1,0 +1,908 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="A FreeRangeZoo extension for Openness">
+    <meta property="og:title" content="free-range-zoo Documentation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A FreeRangeZoo extension for Openness" />
+    <meta property="og:url" content="None" /><meta name="twitter:card" content="summary_large_image"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Rideshare" href="rideshare.html" />
+
+    <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.4.7 and Furo 2023.08.19.dev1 -->
+        <title>Wildfire - free-range-zoo Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=3e7f4c72" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=49cbaffd" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    <header class="farama-header" aria-label="Farama header">
+      <div class="farama-header__container">
+        <div class="farama-header__left--mobile">
+          <label class="nav-overlay-icon" for="__navigation">
+            <div class="visually-hidden">Toggle site navigation sidebar</div>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <defs></defs>
+              <line x1="0.5" y1="4" x2="23.5" y2="4"></line>
+              <line x1="0.232" y1="12" x2="23.5" y2="12"></line>
+              <line x1="0.232" y1="20" x2="23.5" y2="20"></line>
+            </svg>
+          </label>
+        </div>
+        <div class="farama-header__left farama-header__center--mobile">
+          <a href="../index.html">
+              <img class="farama-header__logo only-light" src="../_static/img/darkgoat.png" alt="Light Logo"/>
+              <img class="farama-header__logo only-dark" src="../_static/img/lightgoat.png" alt="Dark Logo"/>
+            <span class="farama-header__title">free-range-zoo Documentation</span>
+          </a>
+        </div>
+        <div class="farama-header__right">
+          <div class="farama-header-menu">
+              <!-- Fork of the Celshast template from the Farama Foundation  (breaks the header like this will reconsider attribution later) -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="page">
+  <!--<header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">free-range-zoo Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>-->
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="farama-sidebar__title" href="../index.html">
+      <img class="farama-header__logo only-light" src="../_static/img/darkgoat.png" alt="Light Logo"/>
+      <img class="farama-header__logo only-dark" src="../_static/img/lightgoat.png" alt="Dark Logo"/>
+    <span class="farama-header__title">free-range-zoo Documentation</span>
+  </a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../content/basic_usage.html">Basic Usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/environment_creation.html">Environment Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../content/environment_tests.html">Testing Environments</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Environments</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="cybersecurity.html">Cybersecurity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rideshare.html">Rideshare</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Wildfire</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/oasys-mas/free-range-zoo">Github</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main-container">
+
+    
+
+    
+
+    <div class="main">
+      <div class="content">
+        <div class="article-container">
+          <a href="#" class="back-to-top muted-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+            </svg>
+            <span>Back to top</span>
+          </a>
+          <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+              <button class="theme-toggle" title="Toggle color theme">
+                <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+                <svg class="theme-icon-when-auto">
+                  <use href="#svg-sun-half"></use>
+                </svg>
+                <svg class="theme-icon-when-dark">
+                  <use href="#svg-moon"></use>
+                </svg>
+                <svg class="theme-icon-when-light">
+                  <use href="#svg-sun"></use>
+                </svg>
+              </button>
+            </div>
+            <label class="toc-overlay-icon toc-content-icon" for="__toc">
+              <div class="visually-hidden">Toggle table of contents sidebar</div>
+              <i class="icon"><svg>
+                  <use href="#svg-toc"></use>
+                </svg></i>
+            </label>
+          </div>
+          <article role="main">
+            
+            <section class="tex2jax_ignore mathjax_ignore" id="wildfire">
+<h1>Wildfire<a class="headerlink" href="#wildfire" title="Link to this heading">¶</a></h1>
+<hr>
+<div class="table-wrapper colwidths-auto docutils container">
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Import</p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">free_range_zoo.envs</span> <span class="pre">import</span> <span class="pre">wildfire_v0</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Actions</p></td>
+<td><p>Discrete &amp; Stochastic</p></td>
+</tr>
+<tr class="row-odd"><td><p>Observations</p></td>
+<td><p>Discrete and fully Observed with private observations</p></td>
+</tr>
+<tr class="row-even"><td><p>Parallel API</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>Manual Control</p></td>
+<td><p>No</p></td>
+</tr>
+<tr class="row-even"><td><p>Agent Names</p></td>
+<td><p>[<span class="math notranslate nohighlight">\(firefighter\)</span>_0, …, <span class="math notranslate nohighlight">\(firefighter\)</span>_n]</p></td>
+</tr>
+<tr class="row-odd"><td><p># Agents</p></td>
+<td><p>[0, <span class="math notranslate nohighlight">\(n_firefighters\)</span>]</p></td>
+</tr>
+<tr class="row-even"><td><p>Action Shape</p></td>
+<td><p>(<span class="math notranslate nohighlight">\(envs\)</span>, 2)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Action Values</p></td>
+<td><p>[<span class="math notranslate nohighlight">\(fight_0\)</span>, …, <span class="math notranslate nohighlight">\(fight_{tasks}\)</span>, <span class="math notranslate nohighlight">\(noop\)</span> (-1)]</p></td>
+</tr>
+<tr class="row-even"><td><p>Observation Shape</p></td>
+<td><p>TensorDict: { <br> <strong>self</strong>: <span class="math notranslate nohighlight">\(&lt;ypos, xpos, fire power, suppressant&gt;\)</span><br> <strong>others</strong>: <span class="math notranslate nohighlight">\(&lt;ypos,xpos,fire power, suppressant&gt;\)</span><br> <strong>tasks</strong>: <span class="math notranslate nohighlight">\(&lt;y, x, fire level, intensity&gt;\)</span> <br> <strong>batch_size</strong>: <span class="math notranslate nohighlight">\(num\_envs\)</span> }</p></td>
+</tr>
+<tr class="row-odd"><td><p>Observation Values</p></td>
+<td><p><u><strong>self</strong></u>:<br> <span class="math notranslate nohighlight">\(ypos\)</span>: <span class="math notranslate nohighlight">\([0, max_y]\)</span><br> <span class="math notranslate nohighlight">\(xpos\)</span>: <span class="math notranslate nohighlight">\([0, max_x]\)</span><br> <span class="math notranslate nohighlight">\(fire\_power\_reduction\)</span>: <span class="math notranslate nohighlight">\([0, max_{fire\_power\_reduction}]\)</span><br> <span class="math notranslate nohighlight">\(suppressant\)</span>: <span class="math notranslate nohighlight">\([0, max_{suppressant}]\)</span><br><u><strong>others</strong></u>:<br> <span class="math notranslate nohighlight">\(ypos\)</span>: <span class="math notranslate nohighlight">\([0, max_y]\)</span><br> <span class="math notranslate nohighlight">\(xpos\)</span>: <span class="math notranslate nohighlight">\([0, max_x]\)</span><br> <span class="math notranslate nohighlight">\(fire\_power\_reduction\)</span>: <span class="math notranslate nohighlight">\([0, max_{fire\_power\_reduction}]\)</span><br> <span class="math notranslate nohighlight">\(suppressant\)</span>: <span class="math notranslate nohighlight">\([0, max_{suppressant}]\)</span><br> <u><strong>tasks</strong></u><br> <span class="math notranslate nohighlight">\(ypos\)</span>: <span class="math notranslate nohighlight">\([0, max_y]\)</span><br> <span class="math notranslate nohighlight">\(xpos\)</span>: <span class="math notranslate nohighlight">\([0, max_x]\)</span><br> <span class="math notranslate nohighlight">\(fire\_level\)</span>: <span class="math notranslate nohighlight">\([0, max_{fire\_level}]\)</span><br> <span class="math notranslate nohighlight">\(intensity\)</span>: <span class="math notranslate nohighlight">\([0, num_{fire\_states}]\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<section id="description">
+<h2>Description<a class="headerlink" href="#description" title="Link to this heading">¶</a></h2>
+<p>The wildfire domain simulates a grid-based environment where fires can spread and agents are tasked with extinguishing
+them by applying suppressant. The environment is dynamic and partially observable, with fires that can spread across
+adjacent tiles and vary in intensity. Fires can also burn out once they reach a certain intensity threshold.</p>
+<p><u><strong>Environment Dynamics</strong></u><br></p>
+<ul class="simple">
+<li><p>Fire Spread: Fires start at designated locations and spread to neighboring tiles, increasing in intensity over
+time. The intensity of the fire influences how much suppressant is needed to extinguish it. Fires will continue
+to spread until they either burn out or are controlled by agents.</p></li>
+<li><p>Fire Intensity and Burnout: As fires spread, their intensity increases, making them harder to fight. Once a
+fire reaches a critical intensity, it may burn out naturally, stopping its spread and extinguishing itself.
+However, this is unpredictable, and timely intervention is often necessary to prevent further damage.</p></li>
+<li><p>Suppression Mechanism: Agents apply suppressant to the fire to reduce its intensity. However, suppressant is a
+finite resource. When an agent runs out of suppressant, they must leave the environment to refill at a designated
+station before returning to continue fighting fires.</p></li>
+</ul>
+<p><u><strong>Environment Openness</strong></u><br></p>
+<ul class="simple">
+<li><p><strong>agent openness</strong>: Environments where agents can dynamically enter and leave, enabling ad-hoc teamwork and
+multi-agent scenarios with evolving participants.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">wildfire</span></code>: Agents can run out of suppressant and leave the environment, removing their contributions
+to existing fires. Agents must reason about their collaborators leaving, or new collaborators entering.</p></li>
+</ul>
+</li>
+<li><p><strong>task openness</strong>: Tasks can be introduced or removed from the environment, allowing for flexbile goal setting
+and adaptable planning models</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">wildfire</span></code>: Fires can spread beyond their original starting point, requiring agents to reason about new
+tasks possibly entering the environment as well as a changing action space: Fires can spread beyond
+their original starting point, requiring agents to reason about new tasks possibly entering the
+environment as well as a changing action space.</p></li>
+</ul>
+</li>
+<li><p><strong>frame / type openness</strong>: Different frames (e.g. agent abilities or skills) can be added, removed, or modified,
+expending the environmental complexity and requiring agents to infer their neighbors changing abilities.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">wildfire</span></code>: Agents can damage their equipment over time, and have their capabilities slowly degrade. On
+the other hand, agents might also recieve different equipment upon leaving the environment to resupply.</p></li>
+</ul>
+</li>
+</ul>
+<hr>
+</section>
+<section id="baseline-policies">
+<h2>Baseline Policies<a class="headerlink" href="#baseline-policies" title="Link to this heading">¶</a></h2>
+<section id="noop">
+<h3>noop<a class="headerlink" href="#noop" title="Link to this heading">¶</a></h3>
+<p><u><strong>Behavior</strong></u><br>
+The agent takes no action in all states, effectively leaving the environment unchanged where possible. If the
+environment naturally evolves regardless of the agent’s actions, the no-op policy simply observes without intervention.</p>
+<p><u><strong>Reasoning</strong></u><br>
+The no-op policy serves as a baseline for understanding the impact of inaction in the environment. It highlights the
+natural dynamics of the environment without any agent interference, providing a benchmark to compare active policies.
+This policy is particularly useful in identifying whether external factors (e.g., environmental dynamics or other
+agents) play a significant role in achieving rewards or whether deliberate actions are necessary for success.</p>
+</section>
+<section id="random">
+<h3>random<a class="headerlink" href="#random" title="Link to this heading">¶</a></h3>
+<p><u><strong>Behavior</strong></u><br>
+The agent selects actions uniformly at random from the available action space, with no regard for the state, goals, or
+consequences of the actions.</p>
+<p><u><strong>Reasoning</strong></u><br>
+The random policy establishes a baseline for performance in the absence of any learning or strategy. It demonstrates
+the environment’s inherent difficulty by showing how likely success is when actions are chosen arbitrarily. This helps
+evaluate the performance improvement of learned or more sophisticated policies over pure chance. It is especially
+valuable in stochastic environments where outcomes may vary widely even with random actions.</p>
+</section>
+<section id="strongest">
+<h3>strongest<a class="headerlink" href="#strongest" title="Link to this heading">¶</a></h3>
+<p><u><strong>Behavior</strong></u><br>
+The agent prioritizes fighting fires that are closest to burning out by focusing on tiles where the fire intensity is
+highest. If the agent runs out of suppressant, it leaves the environment to refill its supply before returning to resume
+operations.</p>
+<p><u><strong>Reasoning</strong></u><br>
+In the wildfire-fighting domain, fires with high intensity are closer to reaching a tipping point where they can either
+burn out naturally or intensify the spread to adjacent tiles. The strongest policy aims to strategically intervene by
+suppressing these critical fires before they can escalate or self-extinguish. By targeting fires on the brink of burning
+out, the agent maximizes its suppressant efficiency, potentially stabilizing the environment faster.</p>
+<p>The policy’s refill mechanism ensures the agent is always operational and avoids remaining idle when suppressant is
+depleted. This behavior is crucial in scenarios where a delay in response could allow the fire to spread unchecked. The
+strongest policy provides a benchmark for evaluating whether focusing on critical fires (as opposed to uniformly
+suppressing all fires or prioritizing larger ones) is an effective strategy in mitigating the wildfire’s overall impact.</p>
+</section>
+<section id="weakest">
+<h3>weakest<a class="headerlink" href="#weakest" title="Link to this heading">¶</a></h3>
+<p><u><strong>Behavior</strong></u><br>
+The agent prioritizes fighting fires with the lowest intensity, focusing on tiles where the fire is closest to being
+extinguished. If the agent runs out of suppressant, it leaves the environment to refill its supply before returning to
+continue firefighting operations.</p>
+<p><u><strong>Reasoning</strong></u><br>
+In the wildfire-fighting domain, extinguishing fires provides rewards, making it advantageous to target fires that are
+closest to being put out. The weakest policy aims to harvest these rewards efficiently by allocating suppressant to
+low-intensity fires, which require fewer resources to extinguish.</p>
+<p>This strategy leverages the fact that fires close to extinguishment offer a high probability of success with minimal
+effort. By concentrating on these easier targets, the agent maximizes short-term rewards while avoiding the risk of
+wasting suppressant on more challenging, high-intensity fires. The refill mechanism ensures the agent remains
+operational and ready to capitalize on emerging opportunities.</p>
+<p>The weakest policy serves as a benchmark for evaluating reward-focused strategies, contrasting with other policies
+that might prioritize long-term stability or overall fire suppression. It highlights the trade-offs between immediate
+rewards and broader control of the environment.</p>
+<hr>
+</section>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading">¶</a></h2>
+<section id="parallel-api">
+<h3>Parallel API<a class="headerlink" href="#parallel-api" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">free_range_zoo.envs</span> <span class="kn">import</span> <span class="n">space_invaders_v2</span>
+
+<span class="n">main_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># Initialize and reset environment to initial state</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">space_invaders_v2</span><span class="o">.</span><span class="n">parallel_env</span><span class="p">(</span><span class="n">render_mode</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">)</span>
+<span class="n">observations</span><span class="p">,</span> <span class="n">infos</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<span class="c1"># Initialize agents and give initial observations</span>
+<span class="n">agents</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">cumulative_rewards</span> <span class="o">=</span> <span class="p">{</span><span class="n">agent</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">agents</span><span class="p">}</span>
+
+<span class="n">current_step</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">torch</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">finished</span><span class="p">):</span>
+    <span class="n">agent_actions</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">agent_name</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">agents</span><span class="p">[</span><span class="n">agent_name</span><span class="p">]</span><span class="o">.</span><span class="n">act</span><span class="p">()])</span>
+        <span class="k">for</span> <span class="n">agent_name</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">agents</span>
+    <span class="p">}</span>  <span class="c1"># Policy action determination here</span>
+
+    <span class="n">observations</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">terminations</span><span class="p">,</span> <span class="n">truncations</span><span class="p">,</span> <span class="n">infos</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">agent_actions</span><span class="p">)</span>
+    <span class="n">rewards</span> <span class="o">=</span> <span class="p">{</span><span class="n">agent_name</span><span class="p">:</span> <span class="n">rewards</span><span class="p">[</span><span class="n">agent_name</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">agent_name</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">agents</span><span class="p">}</span>
+
+    <span class="k">for</span> <span class="n">agent_name</span><span class="p">,</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">agents</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">agent</span><span class="o">.</span><span class="n">observe</span><span class="p">(</span><span class="n">observations</span><span class="p">[</span><span class="n">agent_name</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>  <span class="c1"># Policy observation processing here</span>
+        <span class="n">cumulative_rewards</span><span class="p">[</span><span class="n">agent_name</span><span class="p">]</span> <span class="o">+=</span> <span class="n">rewards</span><span class="p">[</span><span class="n">agent_name</span><span class="p">]</span>
+
+    <span class="n">main_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Step </span><span class="si">{</span><span class="n">current_step</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">rewards</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">current_step</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="n">env</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="aec-api">
+<h3>AEC API<a class="headerlink" href="#aec-api" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">free_range_zoo.envs</span> <span class="kn">import</span> <span class="n">wildfire_v0</span>
+
+<span class="n">main_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+
+<span class="c1"># Initialize and reset environment to initial state</span>
+<span class="n">env</span> <span class="o">=</span> <span class="n">wildfire_v0</span><span class="o">.</span><span class="n">parallel_env</span><span class="p">(</span><span class="n">render_mode</span><span class="o">=</span><span class="s2">&quot;human&quot;</span><span class="p">)</span>
+<span class="n">observations</span><span class="p">,</span> <span class="n">infos</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">reset</span><span class="p">()</span>
+
+<span class="c1"># Initialize agents and give initial observations</span>
+<span class="n">agents</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">cumulative_rewards</span> <span class="o">=</span> <span class="p">{</span><span class="n">agent</span><span class="p">:</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">agents</span><span class="p">}</span>
+
+<span class="n">current_step</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">torch</span><span class="o">.</span><span class="n">all</span><span class="p">(</span><span class="n">env</span><span class="o">.</span><span class="n">finished</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">agent_iter</span><span class="p">():</span>
+        <span class="n">observations</span><span class="p">,</span> <span class="n">rewards</span><span class="p">,</span> <span class="n">terminations</span><span class="p">,</span> <span class="n">truncations</span><span class="p">,</span> <span class="n">infos</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">last</span><span class="p">()</span>
+
+        <span class="c1"># Policy action determination here</span>
+        <span class="n">action</span> <span class="o">=</span> <span class="n">env</span><span class="o">.</span><span class="n">action_space</span><span class="p">(</span><span class="n">agent</span><span class="p">)</span><span class="o">.</span><span class="n">sample</span><span class="p">()</span>
+
+        <span class="n">env</span><span class="o">.</span><span class="n">step</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+
+    <span class="n">rewards</span> <span class="o">=</span> <span class="p">{</span><span class="n">agent</span><span class="p">:</span> <span class="n">rewards</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">env</span><span class="o">.</span><span class="n">agents</span><span class="p">}</span>
+    <span class="n">cumulative_rewards</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span> <span class="o">+=</span> <span class="n">rewards</span><span class="p">[</span><span class="n">agent</span><span class="p">]</span>
+
+    <span class="n">current_step</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">main_logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Step </span><span class="si">{</span><span class="n">current_step</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">rewards</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">env</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="free_range_zoo.envs.wildfire.env.structures.configuration.AgentConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">free_range_zoo.envs.wildfire.env.structures.configuration.</span></span><span class="sig-name descname"><span class="pre">AgentConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agents</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.IntTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_reduction_power</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.FloatTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attack_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressant_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_suppressant</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressant_decrease_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressant_refill_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_equipment_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equipment_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.FlaotTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repair_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degrade_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical_error_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_capacity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tank_switch_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">possible_capacities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacity_probabilities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/free_range_zoo/envs/wildfire/env/structures/configuration.html#AgentConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#free_range_zoo.envs.wildfire.env.structures.configuration.AgentConfiguration" title="Link to this definition">¶</a></dt>
+<dd><p>Setting for configuring agent properties in the environment.</p>
+<dl class="simple">
+<dt>General Attributes:</dt><dd><p>agents: torch.IntTensor - Tensor representing the location of each agent
+fire_reduction_power: torch.FloatTensor - Power of each agent to reduce the fire intensity
+attack_range: torch.Tensor - Range of attack for each agent</p>
+</dd>
+<dt>Suppressant Attributes:</dt><dd><p>suppressant_states: int - Number of suppressant states
+initial_suppressant: int - Initial suppressant value for each agent
+suppressant_decrease_probability: float - Probability of suppressant decrease
+suppressant_refill_probability: float - Probability of suppressant refill</p>
+</dd>
+<dt>Equipment Attributes:</dt><dd><p>intial_equipment_state: int - Initial equipment state for each agent
+equipment_states: torch.FloatTensor - Definition of equipment states modifiers in the form of (capacity, power, range)
+repair_probability: float - Probability that an agent get their repaired equipment once fully damaged
+degrade_probability: float - Probability that an agent’s tank will degrade
+critical_error_probability: float - Probability that an agent at full will suffer a critical error</p>
+</dd>
+<dt>Suppressant Tank Attributes:</dt><dd><p>tank_switch_probability: float - Probability that an agent will be supplied with a different tank on refill
+possible_capacities: torch.Tensor - Possible maximum suppressant values
+capacity_probabilities: torch.Tensor - Probability that each suppressant maximum is chosen</p>
+</dd>
+<dt>Calculated Attributes:</dt><dd><p>num_agents: int - Number of agents
+max_fire_reduction_power: float - Maximum fire reduction power of the agents
+num_equipment_states: int - Number of equipment states</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="free_range_zoo.envs.wildfire.env.structures.configuration.FireConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">free_range_zoo.envs.wildfire.env.structures.configuration.</span></span><span class="sig-name descname"><span class="pre">FireConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fire_types</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_fire_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity_increase_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intensity_decrease_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_power_decrease_bonus</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">burnout_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_spread_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_spread_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_ignition_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cell_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wind_direction</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ignition_temp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">IntTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_fuel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/free_range_zoo/envs/wildfire/env/structures/configuration.html#FireConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#free_range_zoo.envs.wildfire.env.structures.configuration.FireConfiguration" title="Link to this definition">¶</a></dt>
+<dd><p>Setting for configuring fire properties in the environment.</p>
+<dl class="simple">
+<dt>General Attributes:</dt><dd><p>fire_types: torch.Tensor - Required attack power in order to extinguish the fire
+num_fire_states: int - Number of fire states
+lit: torch.IntTensor - Tensor representing the initially lit tiles
+intensity_increase_probability: float - Probability of fire intensity increase
+intensity_decrease_probability: float - Probability of fire intensity decrease
+extra_power_decrease_bonus: float - Additional decrease bonus per extra power
+burnout_probability: float - Probability of fire burnout</p>
+</dd>
+<dt>Fire Spreads Attributes:</dt><dd><p>base_spread_rate: float - Base spread rate of the fire
+max_spread_rate: float - Maximum spread rate of the fire
+random_ignition_probability: float - Probability of random ignition
+cell_size: float - Size of each cell
+wind_direction: float - Direction of the wind (radians)
+ignition_temp: torch.IntTensor - Initial intensity of each fire once ignited
+initial_fuel: int - Initial fuel value of each cell in the grid, controls the number of re-ignitions</p>
+</dd>
+<dt>Calculated Attributes:</dt><dd><p>realistic_burnout_probability: float - Burnout probability with realistic spread rates
+burned_out: int - Burned out fire state
+almost_burned_out: int - Almost burned out fire state
+max_fire_type: int - Maximum fire type
+realistic_spread_rates: List[float] - Spread rates in each direction calculated with wind direction</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="free_range_zoo.envs.wildfire.env.structures.configuration.RewardConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">free_range_zoo.envs.wildfire.env.structures.configuration.</span></span><span class="sig-name descname"><span class="pre">RewardConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fire_rewards</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">FloatTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bad_attack_penalty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">burnout_penalty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">termination_reward</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/free_range_zoo/envs/wildfire/env/structures/configuration.html#RewardConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#free_range_zoo.envs.wildfire.env.structures.configuration.RewardConfiguration" title="Link to this definition">¶</a></dt>
+<dd><p>Settings for configuring the reward function.</p>
+<p>fire_rewards: torch.FloatTensor - Reward for extinguishing a fire
+bad_attack_penalty: float - Penalty for attacking a tile that is not on fire
+burnout_penalty: float - Penalty for attacking a burned out fire
+termination_reward: float - Reward for terminating the environment</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="free_range_zoo.envs.wildfire.env.structures.configuration.StochasticConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">free_range_zoo.envs.wildfire.env.structures.configuration.</span></span><span class="sig-name descname"><span class="pre">StochasticConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">special_burnout_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressant_refill</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressant_decrease</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tank_switch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical_error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degrade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repair</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_increase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_decrease</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_spread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">realistic_fire_spread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_fire_ignition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_fuel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/free_range_zoo/envs/wildfire/env/structures/configuration.html#StochasticConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#free_range_zoo.envs.wildfire.env.structures.configuration.StochasticConfiguration" title="Link to this definition">¶</a></dt>
+<dd><p>Configuration for the stochastic elements of the environment.</p>
+<dl class="simple">
+<dt>General Fire Attributes:</dt><dd><p>special_burnout_probability: bool - Whether to use special burnout probabilities</p>
+</dd>
+<dt>Stochastic Suppressant Attributes:</dt><dd><p>suppressant_refill: bool - Whether suppressants refill stochastically
+suppressant_decrease: bool - Whether suppressants decrease stochastically</p>
+</dd>
+<dt>Stochastic Equipment Attributes:</dt><dd><p>tank_switch: bool - Whether to use stochastic tank switching
+critical_error: bool - Whether equipment state can have a critical error
+degrade: bool - Whether equipment state stochastically degrades
+repair: bool - Whether equipment state stochastically repairs</p>
+</dd>
+<dt>Stochastic Fire Attributes:</dt><dd><p>fire_decrease: bool - Whether fires decrease stochastically
+fire_increase: bool - Whether fires increase stochastically
+fire_spread: bool - Whether fires spread
+realistic_fire_spread: bool - Whether fires spread realistically
+random_fire_ignition: bool - Whether fires can ignite randomly
+fire_fuel: bool - Whether fires consume fuel and have limited ignitions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="free_range_zoo.envs.wildfire.env.structures.configuration.WildfireConfiguration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">free_range_zoo.envs.wildfire.env.structures.configuration.</span></span><span class="sig-name descname"><span class="pre">WildfireConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">grid_height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.structures.configuration.FireConfiguration" title="free_range_zoo.envs.wildfire.env.structures.configuration.FireConfiguration"><span class="pre">FireConfiguration</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">agent_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.structures.configuration.AgentConfiguration" title="free_range_zoo.envs.wildfire.env.structures.configuration.AgentConfiguration"><span class="pre">AgentConfiguration</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.structures.configuration.RewardConfiguration" title="free_range_zoo.envs.wildfire.env.structures.configuration.RewardConfiguration"><span class="pre">RewardConfiguration</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">stochastic_config</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.structures.configuration.StochasticConfiguration" title="free_range_zoo.envs.wildfire.env.structures.configuration.StochasticConfiguration"><span class="pre">StochasticConfiguration</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/free_range_zoo/envs/wildfire/env/structures/configuration.html#WildfireConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#free_range_zoo.envs.wildfire.env.structures.configuration.WildfireConfiguration" title="Link to this definition">¶</a></dt>
+<dd><p>Configuration for the wildfire environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>grid_width</strong> (<em>int</em>) – int - Width of the grid</p></li>
+<li><p><strong>grid_height</strong> (<em>int</em>) – int - Height of the grid</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Configuration Attributes:</dt><dd><p>fire_configuration: FireConfiguration - Configuration for the fire properties
+agent_configuration: AgentConfiguration - Configuration for the agent properties
+reward_configuration: RewardConfiguration - Configuration for the environment rewards
+stochastic_configuration: StochasticConf - Configuration for the stochastic elements</p>
+</dd>
+</dl>
+</dd></dl>
+
+<hr>
+</section>
+<section id="api">
+<h2>API<a class="headerlink" href="#api" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="free_range_zoo.envs.wildfire.env.wildfire.env">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">free_range_zoo.envs.wildfire.env.wildfire.</span></span><span class="sig-name descname"><span class="pre">env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wrappers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/free_range_zoo/envs/wildfire/env/wildfire.html#env"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#free_range_zoo.envs.wildfire.env.wildfire.env" title="Link to this definition">¶</a></dt>
+<dd><p>AEC wrapped version of the wildfire environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>wrappers</strong> – List[Callable[[BatchedAECEnv], BatchedAECEnv]] - the wrappers to apply to the environment</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>BatchedAECEnv</strong> – the AEC wrapped wildfire environment</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="free_range_zoo.envs.wildfire.env.wildfire.raw_env">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">free_range_zoo.envs.wildfire.env.wildfire.</span></span><span class="sig-name descname"><span class="pre">raw_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observe_other_suppressant</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">observe_other_power</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_bad_actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/free_range_zoo/envs/wildfire/env/wildfire.html#raw_env"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#free_range_zoo.envs.wildfire.env.wildfire.raw_env" title="Link to this definition">¶</a></dt>
+<dd><p>Environment definition for the wildfire environment.</p>
+<p>Initialize the Wildfire environment.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>observe_others_suppressant</strong> – bool - whether to observe the suppressant of other agents</p></li>
+<li><p><strong>observe_other_power</strong> – bool - whether to observe the power of other agents</p></li>
+<li><p><strong>show_bad_actions</strong> – bool  - whether to show bad actions</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+          </article>
+        </div>
+        <footer>
+          
+          <div class="related-pages">
+            
+            
+          </div>
+          <div class="bottom-of-page">
+            <div class="left-details">
+              <div class="copyright">
+                Copyright &#169; 1980, University of Georgia, University of Nebraska, Oberlin College
+              </div>
+              <!--
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            -->
+            </div>
+            <div class="right-details">
+              <div class="icons">
+                
+              </div>
+            </div>
+          </div>
+          
+        </footer>
+      </div>
+      <aside class="toc-drawer">
+        
+        
+        <div class="toc-sticky toc-scroll">
+          <div class="toc-title-container">
+            <span class="toc-title">
+              On this page
+            </span>
+          </div>
+          <div class="toc-tree-container">
+            <div class="toc-tree">
+              <ul>
+<li><a class="reference internal" href="#">Wildfire</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#baseline-policies">Baseline Policies</a><ul>
+<li><a class="reference internal" href="#noop">noop</a></li>
+<li><a class="reference internal" href="#random">random</a></li>
+<li><a class="reference internal" href="#strongest">strongest</a></li>
+<li><a class="reference internal" href="#weakest">weakest</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#usage">Usage</a><ul>
+<li><a class="reference internal" href="#parallel-api">Parallel API</a></li>
+<li><a class="reference internal" href="#aec-api">AEC API</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.structures.configuration.AgentConfiguration"><code class="docutils literal notranslate"><span class="pre">AgentConfiguration</span></code></a></li>
+<li><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.structures.configuration.FireConfiguration"><code class="docutils literal notranslate"><span class="pre">FireConfiguration</span></code></a></li>
+<li><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.structures.configuration.RewardConfiguration"><code class="docutils literal notranslate"><span class="pre">RewardConfiguration</span></code></a></li>
+<li><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.structures.configuration.StochasticConfiguration"><code class="docutils literal notranslate"><span class="pre">StochasticConfiguration</span></code></a></li>
+<li><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.structures.configuration.WildfireConfiguration"><code class="docutils literal notranslate"><span class="pre">WildfireConfiguration</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#api">API</a><ul>
+<li><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.wildfire.env"><code class="docutils literal notranslate"><span class="pre">env</span></code></a></li>
+<li><a class="reference internal" href="#free_range_zoo.envs.wildfire.env.wildfire.raw_env"><code class="docutils literal notranslate"><span class="pre">raw_env</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+        
+        
+      </aside>
+    </div>
+  </div>
+</div>
+    <!-- <script>
+      const toggleMenu = () => {
+        const menuBtn = document.querySelector(".farama-header-menu__btn");
+        const menuContainer = document.querySelector(".farama-header-menu-container");
+        if (document.querySelector(".farama-header-menu").classList.contains("active")) {
+          menuBtn.setAttribute("aria-expanded", "false");
+          menuContainer.setAttribute("aria-hidden", "true");
+        } else {
+          menuBtn.setAttribute("aria-expanded", "true");
+          menuContainer.setAttribute("aria-hidden", "false");
+        }
+        document.querySelector(".farama-header-menu").classList.toggle("active");
+      }
+
+      document.querySelector(".farama-header-menu__btn").addEventListener("click", toggleMenu);
+      document.getElementById("farama-close-menu").addEventListener("click", toggleMenu);
+    </script> -->
+
+    
+    
+
+    <script src="../_static/documentation_options.js?v=c5e1e573"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=7660844c"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <!--
+    <script>
+
+      const createProjectsList = (projects, displayImages) => {
+        const ulElem = Object.assign(document.createElement('ul'),
+          {
+            className:'farama-header-menu-list',
+          }
+        )
+        for (let project of projects) {
+          const liElem = document.createElement("li");
+          const aElem = Object.assign(document.createElement("a"),
+            {
+              href: project.link
+            }
+          );
+          liElem.appendChild(aElem);
+          if (displayImages) {
+            const imgElem = Object.assign(document.createElement("img"),
+              {
+                src: project.image ? imagesBasepath + project.image : imagesBasepath + "/farama_black.svg",
+                alt: `${project.name} logo`,
+                className: "farama-black-logo-invert"
+              }
+            );
+            aElem.appendChild(imgElem);
+          }
+          aElem.appendChild(document.createTextNode(project.name));
+          ulElem.appendChild(liElem);
+        }
+        return ulElem;
+      }
+
+      // Create menu with Farama projects by using the API at farama.org/api/projects.json
+      const createCORSRequest = (method, url) => {
+        let xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+
+        if ("withCredentials" in xhr) {
+          xhr.open(method, url, true);
+        } else if (typeof XDomainRequest != "undefined") {
+          // IE8 & IE9
+          xhr = new XDomainRequest();
+          xhr.open(method, url);
+        } else {
+          // CORS not supported.
+          xhr = null;
+        }
+        return xhr;
+      };
+
+      const url = 'https://farama.org/api/projects.json';
+      const imagesBasepath = "https://farama.org/assets/images"
+      const method = 'GET';
+      let xhr = createCORSRequest(method, url);
+
+      xhr.onload = () => {
+        const jsonResponse = xhr.response;
+        const sections = {
+          "Core Projects": [],
+          "Mature Projects": {
+            "Documentation": [],
+            "Repositories": [],
+          },
+          "Incubating Projects": {
+            "Documentation": [],
+            "Repositories": [],
+          },
+          "Foundation": [
+            {
+              name: "About",
+              link: "https://farama.org/about"
+            },
+            {
+              name: "Standards",
+              link: "https://farama.org/project_standards",
+            },
+            {
+              name: "Donate",
+              link: "https://farama.org/donations"
+            }
+          ]
+        }
+
+        // Categorize projects
+        Object.keys(jsonResponse).forEach(key => {
+          projectJson = jsonResponse[key];
+          if (projectJson.website !== null) {
+            projectJson.link = projectJson.website;
+          } else {
+            projectJson.link = projectJson.github;
+          }
+          if (projectJson.type === "core") {
+            sections["Core Projects"].push(projectJson)
+          } else if (projectJson.type == "mature") {
+            if (projectJson.website !== null) {
+              sections["Mature Projects"]["Documentation"].push(projectJson)
+            } else {
+              sections["Mature Projects"]["Repositories"].push(projectJson)
+            }
+          } else {
+            if (projectJson.website !== null) {
+              sections["Incubating Projects"]["Documentation"].push(projectJson)
+            } else {
+              sections["Incubating Projects"]["Repositories"].push(projectJson)
+            }
+          }
+        })
+
+        const menuContainer = document.querySelector(".farama-header-menu__body");
+
+        Object.keys(sections).forEach((key, i) => {
+          const sectionElem = Object.assign(
+            document.createElement('div'), {
+              className:'farama-header-menu__section',
+            }
+          )
+          sectionElem.appendChild(Object.assign(document.createElement('span'),
+            {
+              className:'farama-header-menu__section-title' ,
+              innerText: key
+            }
+          ))
+          // is not a list
+          if (sections[key].constructor !== Array) {
+            const subSections = sections[key];
+            const subSectionContainerElem = Object.assign(
+                document.createElement('div'), {
+                  className:'farama-header-menu__subsections-container',
+                  style: 'display: flex'
+                }
+            )
+            Object.keys(subSections).forEach((subKey, i) => {
+              const subSectionElem = Object.assign(
+                document.createElement('div'), {
+                  className:'farama-header-menu__subsection',
+                }
+              )
+              subSectionElem.appendChild(Object.assign(document.createElement('span'),
+                {
+                  className:'farama-header-menu__subsection-title' ,
+                  innerText: subKey
+                }
+              ))
+              const ulElem = createProjectsList(subSections[subKey], key !== 'Foundation');
+              subSectionElem.appendChild(ulElem);
+              subSectionContainerElem.appendChild(subSectionElem);
+            })
+            sectionElem.appendChild(subSectionContainerElem);
+          } else {
+            const projects = sections[key];
+            const ulElem = createProjectsList(projects, true);
+            sectionElem.appendChild(ulElem);
+          }
+          menuContainer.appendChild(sectionElem)
+        });
+      }
+
+      xhr.onerror = function() {
+        console.error("Unable to load projects");
+      };
+
+      xhr.send();
+    </script>
+  -->
+
+    
+    
+
+    </body>
+</html>
