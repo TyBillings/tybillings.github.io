@@ -1,0 +1,906 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../../../../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content="A FreeRangeZoo extension for Openness">
+    <meta property="og:title" content="free-range-zoo Documentation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A FreeRangeZoo extension for Openness" />
+    <meta property="og:url" content="None" /><meta name="twitter:card" content="summary_large_image"><link rel="index" title="Index" href="../../../../../../genindex.html" /><link rel="search" title="Search" href="../../../../../../search.html" />
+
+    <link rel="shortcut icon" href="../../../../../../_static/favicon.png"/><!-- Generated with Sphinx 7.4.7 and Furo 2023.08.19.dev1 -->
+        <title>free_range_zoo.envs.wildfire.env.structures.configuration - free-range-zoo Documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/styles/furo.css?v=3e7f4c72" />
+    <link rel="stylesheet" type="text/css" href="../../../../../../_static/styles/furo-extensions.css?v=49cbaffd" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    <header class="farama-header" aria-label="Farama header">
+      <div class="farama-header__container">
+        <div class="farama-header__left--mobile">
+          <label class="nav-overlay-icon" for="__navigation">
+            <div class="visually-hidden">Toggle site navigation sidebar</div>
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <defs></defs>
+              <line x1="0.5" y1="4" x2="23.5" y2="4"></line>
+              <line x1="0.232" y1="12" x2="23.5" y2="12"></line>
+              <line x1="0.232" y1="20" x2="23.5" y2="20"></line>
+            </svg>
+          </label>
+        </div>
+        <div class="farama-header__left farama-header__center--mobile">
+          <a href="../../../../../../index.html">
+              <img class="farama-header__logo only-light" src="../../../../../../_static/img/darkgoat.png" alt="Light Logo"/>
+              <img class="farama-header__logo only-dark" src="../../../../../../_static/img/lightgoat.png" alt="Dark Logo"/>
+            <span class="farama-header__title">free-range-zoo Documentation</span>
+          </a>
+        </div>
+        <div class="farama-header__right">
+          <div class="farama-header-menu">
+              <!-- Fork of the Celshast template from the Farama Foundation  (breaks the header like this will reconsider attribution later) -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<div class="page">
+  <!--<header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../../../../index.html"><div class="brand">free-range-zoo Documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>-->
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="farama-sidebar__title" href="../../../../../../index.html">
+      <img class="farama-header__logo only-light" src="../../../../../../_static/img/darkgoat.png" alt="Light Logo"/>
+      <img class="farama-header__logo only-dark" src="../../../../../../_static/img/lightgoat.png" alt="Dark Logo"/>
+    <span class="farama-header__title">free-range-zoo Documentation</span>
+  </a><form class="sidebar-search-container" method="get" action="../../../../../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../introduction/installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../introduction/basic_usage.html">Basic Usage</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../../api/environments.html">Environment API</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Environments</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../environments/wildfire/index.html">Wildfire</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Wildfire</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../environments/wildfire/specification.html">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../environments/wildfire/baselines.html">Baselines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../environments/cybersecurity/index.html">Cybersecurity</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Cybersecurity</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../environments/cybersecurity/specification.html">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../environments/cybersecurity/baselines.html">Baselines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../../../environments/rideshare/index.html">Rideshare</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Rideshare</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../environments/rideshare/specification.html">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../../environments/rideshare/baselines.html">Baselines</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/oasys-mas/free-range-zoo">Github</a></li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main-container">
+
+    
+
+    
+
+    <div class="main">
+      <div class="content">
+        <div class="article-container">
+          <a href="#" class="back-to-top muted-link">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+            </svg>
+            <span>Back to top</span>
+          </a>
+          <div class="content-icon-container"><div class="theme-toggle-container theme-toggle-content">
+              <button class="theme-toggle" title="Toggle color theme">
+                <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+                <svg class="theme-icon-when-auto">
+                  <use href="#svg-sun-half"></use>
+                </svg>
+                <svg class="theme-icon-when-dark">
+                  <use href="#svg-moon"></use>
+                </svg>
+                <svg class="theme-icon-when-light">
+                  <use href="#svg-sun"></use>
+                </svg>
+              </button>
+            </div>
+            <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+              <div class="visually-hidden">Toggle table of contents sidebar</div>
+              <i class="icon"><svg>
+                  <use href="#svg-toc"></use>
+                </svg></i>
+            </label>
+          </div>
+          <article role="main">
+            
+            <h1>Source code for free_range_zoo.envs.wildfire.env.structures.configuration</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Configurations classes for the wildfire environments.&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">List</span>
+
+<span class="kn">import</span> <span class="nn">functools</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">free_range_zoo.utils.configuration</span> <span class="kn">import</span> <span class="n">Configuration</span>
+
+
+<div class="viewcode-block" id="RewardConfiguration">
+<a class="viewcode-back" href="../../../../../../environments/wildfire/specification.html#free_range_zoo.envs.wildfire.env.structures.configuration.RewardConfiguration">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">RewardConfiguration</span><span class="p">(</span><span class="n">Configuration</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Settings for configuring the reward function.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        fire_rewards: torch.FloatTensor - Reward for extinguishing a fire</span>
+<span class="sd">        bad_attack_penalty: float - Penalty for attacking a tile that is not on fire</span>
+<span class="sd">        burnout_penalty: float - Penalty for attacking a burned out fire</span>
+<span class="sd">        termination_reward: float - Reward for terminating the environment</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">fire_rewards</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span>
+    <span class="n">bad_attack_penalty</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">burnout_penalty</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">termination_reward</span><span class="p">:</span> <span class="nb">float</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the configuration to ensure logical consistency.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool - True if the configuration is valid</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fire_rewards</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;fire_rewards should be a 2D tensor&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="FireConfiguration">
+<a class="viewcode-back" href="../../../../../../environments/wildfire/specification.html#free_range_zoo.envs.wildfire.env.structures.configuration.FireConfiguration">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">FireConfiguration</span><span class="p">(</span><span class="n">Configuration</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Setting for configuring fire properties in the environment.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        fire_types: torch.IntTensor - Required attack power in order to extinguish the fire</span>
+<span class="sd">        num_fire_states: int - Number of fire states</span>
+<span class="sd">        lit: torch.IntTensor - Tensor representing the initially lit tiles</span>
+<span class="sd">        intensity_increase_probability: float - Probability of fire intensity increase</span>
+<span class="sd">        intensity_decrease_probability: float - Probability of fire intensity decrease</span>
+<span class="sd">        extra_power_decrease_bonus: float - Additional decrease bonus per extra power</span>
+<span class="sd">        burnout_probability: float - Probability of fire burnout</span>
+<span class="sd">    Fire Spreads Attributes:</span>
+<span class="sd">        base_spread_rate: float - Base spread rate of the fire</span>
+<span class="sd">        max_spread_rate: float - Maximum spread rate of the fire</span>
+<span class="sd">        random_ignition_probability: float - Probability of random ignition</span>
+<span class="sd">        cell_size: float - Size of each cell</span>
+<span class="sd">        wind_direction: float - Direction of the wind (radians)</span>
+<span class="sd">        ignition_temp: torch.IntTensor - Initial intensity of each fire once ignited</span>
+<span class="sd">        initial_fuel: int - Initial fuel value of each cell in the grid, controls the number of re-ignitions</span>
+<span class="sd">    Calculated Attributes:</span>
+<span class="sd">        realistic_burnout_probability: float - Burnout probability with realistic spread rates</span>
+<span class="sd">        burned_out: int - Burned out fire state</span>
+<span class="sd">        almost_burned_out: int - Almost burned out fire state</span>
+<span class="sd">        max_fire_type: int - Maximum fire type</span>
+<span class="sd">        realistic_spread_rates: List[float] - Spread rates in each direction calculated with wind direction</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">fire_types</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">IntTensor</span>
+    <span class="n">num_fire_states</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">lit</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
+    <span class="n">intensity_increase_probability</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">intensity_decrease_probability</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">extra_power_decrease_bonus</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">burnout_probability</span><span class="p">:</span> <span class="nb">float</span>
+
+    <span class="n">base_spread_rate</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">max_spread_rate</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">random_ignition_probability</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">cell_size</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">wind_direction</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">ignition_temp</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">IntTensor</span>
+    <span class="n">initial_fuel</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">cached_property</span>
+    <span class="k">def</span> <span class="nf">realistic_burnout_probability</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the burnout probability with realistic spread rates.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="mi">4</span> <span class="o">*</span> <span class="mf">0.167</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_conf</span><span class="o">.</span><span class="n">max_spread_rate</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_conf</span><span class="o">.</span><span class="n">cell_size</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">cached_property</span>
+    <span class="k">def</span> <span class="nf">burned_out</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the burned out fire state.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_fire_states</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">cached_property</span>
+    <span class="k">def</span> <span class="nf">almost_burned_out</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the alomst burned out fire state.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_fire_states</span> <span class="o">-</span> <span class="mi">2</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">cached_property</span>
+    <span class="k">def</span> <span class="nf">max_fire_type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the maximum fire type.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fire_types</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">cached_property</span>
+    <span class="k">def</span> <span class="nf">realistic_spread_rates</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">float</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the spread rates in each direction calculated with the wind direction.&quot;&quot;&quot;</span>
+        <span class="n">cell_spread_factor</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_spread_rate</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">cell_size</span>
+        <span class="n">max_spread_factor</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_spread_rate</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">max_spread_rate</span>
+
+        <span class="n">cos_terms</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">0</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">wind_direction</span><span class="p">),</span>  <span class="c1"># North</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">wind_direction</span><span class="p">),</span>  <span class="c1"># East</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">wind_direction</span><span class="p">),</span>  <span class="c1"># South</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mf">1.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">wind_direction</span><span class="p">)</span>  <span class="c1"># West</span>
+        <span class="p">]</span>
+
+        <span class="n">spread_rates</span> <span class="o">=</span> <span class="p">[</span><span class="n">cell_spread_factor</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">cos_term</span> <span class="o">*</span> <span class="n">max_spread_factor</span><span class="p">)</span> <span class="k">for</span> <span class="n">cos_term</span> <span class="ow">in</span> <span class="n">cos_terms</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">spread_rates</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the configuration to ensure logical consistency.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool - True if the configuration is valid</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fire_types</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;fires should be a 2D tensor&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">num_fire_states</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;num_fire_states should be greater than 4&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lit</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;lit should be a 2D tensor&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">intensity_increase_probability</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">intensity_increase_probability</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;intensity_increase_probability should be between 0 and 1&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">intensity_decrease_probability</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">intensity_decrease_probability</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;intensity_decrease_probability should be between 0 and 1&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">burnout_probability</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">burnout_probability</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;burnout_probability should be between 0 and 1&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_ignition_probability</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">random_ignition_probability</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;random_ignition_probability should be between 0 and 1&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="mf">0.0</span> <span class="o">&lt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">wind_direction</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Wind direction must be between 0 and 2 * pi&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">lit</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">fire_types</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">ignition_temp</span><span class="o">.</span><span class="n">shape</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;lit, fire_types, and ignition_temp must have the same shape&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="AgentConfiguration">
+<a class="viewcode-back" href="../../../../../../environments/wildfire/specification.html#free_range_zoo.envs.wildfire.env.structures.configuration.AgentConfiguration">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">AgentConfiguration</span><span class="p">(</span><span class="n">Configuration</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Setting for configuring agent properties in the environment.</span>
+
+<span class="sd">    General Attributes:</span>
+<span class="sd">        agents: torch.IntTensor - Tensor representing the location of each agent</span>
+<span class="sd">        fire_reduction_power: torch.FloatTensor - Power of each agent to reduce the fire intensity</span>
+<span class="sd">        attack_range: torch.Tensor - Range of attack for each agent</span>
+<span class="sd">    Suppressant Attributes:</span>
+<span class="sd">        suppressant_states: int - Number of suppressant states</span>
+<span class="sd">        initial_suppressant: int - Initial suppressant value for each agent</span>
+<span class="sd">        suppressant_decrease_probability: float - Probability of suppressant decrease</span>
+<span class="sd">        suppressant_refill_probability: float - Probability of suppressant refill</span>
+<span class="sd">    Equipment Attributes:</span>
+<span class="sd">        intial_equipment_state: int - Initial equipment state for each agent</span>
+<span class="sd">        equipment_states: torch.FloatTensor - Definition of equipment states modifiers in the form of (capacity, power, range)</span>
+<span class="sd">        repair_probability: float - Probability that an agent get their repaired equipment once fully damaged</span>
+<span class="sd">        degrade_probability: float - Probability that an agent&#39;s tank will degrade</span>
+<span class="sd">        critical_error_probability: float - Probability that an agent at full will suffer a critical error</span>
+<span class="sd">    Suppressant Tank Attributes:</span>
+<span class="sd">        tank_switch_probability: float - Probability that an agent will be supplied with a different tank on refill</span>
+<span class="sd">        possible_capacities: torch.Tensor - Possible maximum suppressant values</span>
+<span class="sd">        capacity_probabilities: torch.Tensor - Probability that each suppressant maximum is chosen</span>
+<span class="sd">    Calculated Attributes:</span>
+<span class="sd">        num_agents: int - Number of agents</span>
+<span class="sd">        max_fire_reduction_power: float - Maximum fire reduction power of the agents</span>
+<span class="sd">        num_equipment_states: int - Number of equipment states</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">agents</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">IntTensor</span>
+    <span class="n">fire_reduction_power</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span>
+    <span class="n">attack_range</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
+
+    <span class="n">suppressant_states</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">initial_suppressant</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">suppressant_decrease_probability</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">suppressant_refill_probability</span><span class="p">:</span> <span class="nb">float</span>
+
+    <span class="n">initial_equipment_state</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">equipment_states</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">FlaotTensor</span>
+    <span class="n">repair_probability</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">degrade_probability</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">critical_error_probability</span><span class="p">:</span> <span class="nb">float</span>
+
+    <span class="n">initial_capacity</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">tank_switch_probability</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">possible_capacities</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
+    <span class="n">capacity_probabilities</span><span class="p">:</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">cached_property</span>
+    <span class="k">def</span> <span class="nf">num_agents</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of agents.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">cached_property</span>
+    <span class="k">def</span> <span class="nf">max_fire_reduction_power</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the maximum fire reduction power of the agents.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fire_reduction_power</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">cached_property</span>
+    <span class="k">def</span> <span class="nf">num_equipment_states</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the number of equipment states.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">equipment_states</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;agents should be a 2D tensor&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fire_reduction_power</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;fire_reduction_power should be a 1D tensor&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">attack_range</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;attack_range should be a 1D tensor&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">agents</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fire_reduction_power</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;agents, fire_reduction_power, and attack_range should have the same length&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressant_states</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;suppressant_states should be greater than 2&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_suppressant</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressant_states</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;init_suppressant should be less than suppressant_states&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressant_decrease_probability</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressant_decrease_probability</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;suppressant_use_probability should be between 0 and 1&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressant_refill_probability</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressant_refill_probability</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;suppressant_refill_probability should be between 0 and 1&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">initial_equipment_state</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">equipment_states</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;initial_equipment_state should be less than the number of equipment states&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">equipment_states</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;equipment_states should be a 2D tensor&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">equipment_states</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;equipment_states should have 3 modifers: suppressant maximum, power, range&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">repair_probability</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">repair_probability</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;repair_probability should be between 0 and 1&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">degrade_probability</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">degrade_probability</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;degrade_probability should be between 0 and 1&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">critical_error_probability</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">critical_error_probability</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;critical_error_probability should be between 0 and 1&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">degrade_probability</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">critical_error_probability</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;degrade_probability + critical_error_probability should be less than or equal to 1&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tank_switch_probability</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">tank_switch_probability</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;tank_switch_probability should be between 0 and 1&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">possible_capacities</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;possible_suppressant_maximums should be a 1D tensor&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">capacity_probabilities</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;suppressant_maximum_probabilities should be a 1D tensor&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">possible_capacities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacity_probabilities</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;possible_suppressant_maximums and suppressant_maximum_probabilities should have the same length&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">possible_capacities</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;possible_suppressant_maximums should be greater than 1&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">capacity_probabilities</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;suppressant_maximum_probabilities should sum to 1&#39;</span><span class="p">)</span></div>
+
+
+
+<div class="viewcode-block" id="StochasticConfiguration">
+<a class="viewcode-back" href="../../../../../../environments/wildfire/specification.html#free_range_zoo.envs.wildfire.env.structures.configuration.StochasticConfiguration">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">StochasticConfiguration</span><span class="p">(</span><span class="n">Configuration</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Configuration for the stochastic elements of the environment.</span>
+
+<span class="sd">    General Fire Attributes:</span>
+<span class="sd">        special_burnout_probability: bool - Whether to use special burnout probabilities</span>
+<span class="sd">    Stochastic Suppressant Attributes:</span>
+<span class="sd">        suppressant_refill: bool - Whether suppressants refill stochastically</span>
+<span class="sd">        suppressant_decrease: bool - Whether suppressants decrease stochastically</span>
+<span class="sd">    Stochastic Equipment Attributes:</span>
+<span class="sd">        tank_switch: bool - Whether to use stochastic tank switching</span>
+<span class="sd">        critical_error: bool - Whether equipment state can have a critical error</span>
+<span class="sd">        degrade: bool - Whether equipment state stochastically degrades</span>
+<span class="sd">        repair: bool - Whether equipment state stochastically repairs</span>
+<span class="sd">    Stochastic Fire Attributes:</span>
+<span class="sd">        fire_decrease: bool - Whether fires decrease stochastically</span>
+<span class="sd">        fire_increase: bool - Whether fires increase stochastically</span>
+<span class="sd">        fire_spread: bool - Whether fires spread</span>
+<span class="sd">        realistic_fire_spread: bool - Whether fires spread realistically</span>
+<span class="sd">        random_fire_ignition: bool - Whether fires can ignite randomly</span>
+<span class="sd">        fire_fuel: bool - Whether fires consume fuel and have limited ignitions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">special_burnout_probability</span><span class="p">:</span> <span class="nb">bool</span>
+
+    <span class="n">suppressant_refill</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">suppressant_decrease</span><span class="p">:</span> <span class="nb">bool</span>
+
+    <span class="n">tank_switch</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">critical_error</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">degrade</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">repair</span><span class="p">:</span> <span class="nb">bool</span>
+
+    <span class="n">fire_increase</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">fire_decrease</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">fire_spread</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">realistic_fire_spread</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">random_fire_ignition</span><span class="p">:</span> <span class="nb">bool</span>
+    <span class="n">fire_fuel</span><span class="p">:</span> <span class="nb">bool</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the configuration to ensure logical consistency.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool - True if the configuration is valid</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">fire_spread</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">realistic_fire_spread</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Cannot use realistic fire spread without fire spread&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">critical_error</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">degrade</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;Cannot have critical errors without equipment degradation&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+
+
+<div class="viewcode-block" id="WildfireConfiguration">
+<a class="viewcode-back" href="../../../../../../environments/wildfire/specification.html#free_range_zoo.envs.wildfire.env.structures.configuration.WildfireConfiguration">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">WildfireConfiguration</span><span class="p">(</span><span class="n">Configuration</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Configuration for the wildfire environment.</span>
+
+<span class="sd">    Attributes:</span>
+<span class="sd">        grid_width: int - Width of the grid</span>
+<span class="sd">        grid_height: int - Height of the grid</span>
+<span class="sd">    Configuration Attributes:</span>
+<span class="sd">        fire_configuration: FireConfiguration - Configuration for the fire properties</span>
+<span class="sd">        agent_configuration: AgentConfiguration - Configuration for the agent properties</span>
+<span class="sd">        reward_configuration: RewardConfiguration - Configuration for the environment rewards</span>
+<span class="sd">        stochastic_configuration: StochasticConf - Configuration for the stochastic elements</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">grid_width</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">grid_height</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="n">fire_config</span><span class="p">:</span> <span class="n">FireConfiguration</span>
+    <span class="n">agent_config</span><span class="p">:</span> <span class="n">AgentConfiguration</span>
+    <span class="n">reward_config</span><span class="p">:</span> <span class="n">RewardConfiguration</span>
+    <span class="n">stochastic_config</span><span class="p">:</span> <span class="n">StochasticConfiguration</span>
+
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">cached_property</span>
+    <span class="k">def</span> <span class="nf">fire_spread_weights</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">torch</span><span class="o">.</span><span class="n">Tensor</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the fire spread weights with the current fire and stochastic configuration.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">stochastic_config</span><span class="o">.</span><span class="n">fire_spread</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stochastic_config</span><span class="o">.</span><span class="n">realistic_fire_spread</span><span class="p">:</span>
+            <span class="n">Ns</span><span class="p">,</span> <span class="n">Es</span><span class="p">,</span> <span class="n">Ss</span><span class="p">,</span> <span class="n">Ws</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fire_config</span><span class="o">.</span><span class="n">realistic_spread_rates</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">pass</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stochastic_config</span><span class="o">.</span><span class="n">realistic_fire_spread</span><span class="p">:</span>
+            <span class="n">Ns</span><span class="p">,</span> <span class="n">Es</span><span class="p">,</span> <span class="n">Ss</span><span class="p">,</span> <span class="n">Ws</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fire_config</span><span class="o">.</span><span class="n">realistic_spread_rates</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Ns</span><span class="p">,</span> <span class="n">Es</span><span class="p">,</span> <span class="n">Ss</span><span class="p">,</span> <span class="n">Ws</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">fire_config</span><span class="o">.</span><span class="n">base_spread_rate</span><span class="p">]</span> <span class="o">*</span> <span class="mi">4</span>
+
+        <span class="n">fire_filter</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span>
+            <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Ns</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+            <span class="p">[</span><span class="n">Ws</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">Es</span><span class="p">],</span>
+            <span class="p">[</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">Ss</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],</span>
+        <span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">stochastic_config</span><span class="o">.</span><span class="n">random_fire_ignition</span><span class="p">:</span>
+            <span class="n">fire_filter</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">fire_filter</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">fire_config</span><span class="o">.</span><span class="n">random_ignition_probability</span>
+
+        <span class="k">return</span> <span class="n">fire_filter</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">validate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate the configuration to ensure logical consistency.</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            bool - True if the configuration is valid</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">validate</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_width</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;grid_width should be greater than 0&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">grid_height</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;grid_height should be greater than 0&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fire_config</span><span class="o">.</span><span class="n">lit</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">reward_config</span><span class="o">.</span><span class="n">fire_rewards</span><span class="o">.</span><span class="n">shape</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;lit and fire_rewards should have the same shape&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="kc">True</span></div>
+
+</pre></div>
+          </article>
+        </div>
+        <footer>
+          
+          <div class="related-pages">
+            
+            
+          </div>
+          <div class="bottom-of-page">
+            <div class="left-details">
+              <div class="copyright">
+                Copyright &#169; 1980, University of Georgia, University of Nebraska, Oberlin College
+              </div>
+              <!--
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            -->
+            </div>
+            <div class="right-details">
+              <div class="icons">
+                
+              </div>
+            </div>
+          </div>
+          
+        </footer>
+      </div>
+      <aside class="toc-drawer no-toc">
+        
+        
+        
+      </aside>
+    </div>
+  </div>
+</div>
+    <!-- <script>
+      const toggleMenu = () => {
+        const menuBtn = document.querySelector(".farama-header-menu__btn");
+        const menuContainer = document.querySelector(".farama-header-menu-container");
+        if (document.querySelector(".farama-header-menu").classList.contains("active")) {
+          menuBtn.setAttribute("aria-expanded", "false");
+          menuContainer.setAttribute("aria-hidden", "true");
+        } else {
+          menuBtn.setAttribute("aria-expanded", "true");
+          menuContainer.setAttribute("aria-hidden", "false");
+        }
+        document.querySelector(".farama-header-menu").classList.toggle("active");
+      }
+
+      document.querySelector(".farama-header-menu__btn").addEventListener("click", toggleMenu);
+      document.getElementById("farama-close-menu").addEventListener("click", toggleMenu);
+    </script> -->
+
+    
+    
+
+    <script src="../../../../../../_static/documentation_options.js?v=c5e1e573"></script>
+    <script src="../../../../../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../../_static/scripts/furo.js?v=7660844c"></script>
+    
+    <!--
+    <script>
+
+      const createProjectsList = (projects, displayImages) => {
+        const ulElem = Object.assign(document.createElement('ul'),
+          {
+            className:'farama-header-menu-list',
+          }
+        )
+        for (let project of projects) {
+          const liElem = document.createElement("li");
+          const aElem = Object.assign(document.createElement("a"),
+            {
+              href: project.link
+            }
+          );
+          liElem.appendChild(aElem);
+          if (displayImages) {
+            const imgElem = Object.assign(document.createElement("img"),
+              {
+                src: project.image ? imagesBasepath + project.image : imagesBasepath + "/farama_black.svg",
+                alt: `${project.name} logo`,
+                className: "farama-black-logo-invert"
+              }
+            );
+            aElem.appendChild(imgElem);
+          }
+          aElem.appendChild(document.createTextNode(project.name));
+          ulElem.appendChild(liElem);
+        }
+        return ulElem;
+      }
+
+      // Create menu with Farama projects by using the API at farama.org/api/projects.json
+      const createCORSRequest = (method, url) => {
+        let xhr = new XMLHttpRequest();
+        xhr.responseType = 'json';
+
+        if ("withCredentials" in xhr) {
+          xhr.open(method, url, true);
+        } else if (typeof XDomainRequest != "undefined") {
+          // IE8 & IE9
+          xhr = new XDomainRequest();
+          xhr.open(method, url);
+        } else {
+          // CORS not supported.
+          xhr = null;
+        }
+        return xhr;
+      };
+
+      const url = 'https://farama.org/api/projects.json';
+      const imagesBasepath = "https://farama.org/assets/images"
+      const method = 'GET';
+      let xhr = createCORSRequest(method, url);
+
+      xhr.onload = () => {
+        const jsonResponse = xhr.response;
+        const sections = {
+          "Core Projects": [],
+          "Mature Projects": {
+            "Documentation": [],
+            "Repositories": [],
+          },
+          "Incubating Projects": {
+            "Documentation": [],
+            "Repositories": [],
+          },
+          "Foundation": [
+            {
+              name: "About",
+              link: "https://farama.org/about"
+            },
+            {
+              name: "Standards",
+              link: "https://farama.org/project_standards",
+            },
+            {
+              name: "Donate",
+              link: "https://farama.org/donations"
+            }
+          ]
+        }
+
+        // Categorize projects
+        Object.keys(jsonResponse).forEach(key => {
+          projectJson = jsonResponse[key];
+          if (projectJson.website !== null) {
+            projectJson.link = projectJson.website;
+          } else {
+            projectJson.link = projectJson.github;
+          }
+          if (projectJson.type === "core") {
+            sections["Core Projects"].push(projectJson)
+          } else if (projectJson.type == "mature") {
+            if (projectJson.website !== null) {
+              sections["Mature Projects"]["Documentation"].push(projectJson)
+            } else {
+              sections["Mature Projects"]["Repositories"].push(projectJson)
+            }
+          } else {
+            if (projectJson.website !== null) {
+              sections["Incubating Projects"]["Documentation"].push(projectJson)
+            } else {
+              sections["Incubating Projects"]["Repositories"].push(projectJson)
+            }
+          }
+        })
+
+        const menuContainer = document.querySelector(".farama-header-menu__body");
+
+        Object.keys(sections).forEach((key, i) => {
+          const sectionElem = Object.assign(
+            document.createElement('div'), {
+              className:'farama-header-menu__section',
+            }
+          )
+          sectionElem.appendChild(Object.assign(document.createElement('span'),
+            {
+              className:'farama-header-menu__section-title' ,
+              innerText: key
+            }
+          ))
+          // is not a list
+          if (sections[key].constructor !== Array) {
+            const subSections = sections[key];
+            const subSectionContainerElem = Object.assign(
+                document.createElement('div'), {
+                  className:'farama-header-menu__subsections-container',
+                  style: 'display: flex'
+                }
+            )
+            Object.keys(subSections).forEach((subKey, i) => {
+              const subSectionElem = Object.assign(
+                document.createElement('div'), {
+                  className:'farama-header-menu__subsection',
+                }
+              )
+              subSectionElem.appendChild(Object.assign(document.createElement('span'),
+                {
+                  className:'farama-header-menu__subsection-title' ,
+                  innerText: subKey
+                }
+              ))
+              const ulElem = createProjectsList(subSections[subKey], key !== 'Foundation');
+              subSectionElem.appendChild(ulElem);
+              subSectionContainerElem.appendChild(subSectionElem);
+            })
+            sectionElem.appendChild(subSectionContainerElem);
+          } else {
+            const projects = sections[key];
+            const ulElem = createProjectsList(projects, true);
+            sectionElem.appendChild(ulElem);
+          }
+          menuContainer.appendChild(sectionElem)
+        });
+      }
+
+      xhr.onerror = function() {
+        console.error("Unable to load projects");
+      };
+
+      xhr.send();
+    </script>
+  -->
+
+    
+    
+
+    </body>
+</html>
