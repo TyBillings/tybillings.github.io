@@ -288,7 +288,7 @@
 <td><p>[<span class="math notranslate nohighlight">\(firefighter\)</span>_0, …, <span class="math notranslate nohighlight">\(firefighter\)</span>_n]</p></td>
 </tr>
 <tr class="row-odd"><td><p># Agents</p></td>
-<td><p>[0, <span class="math notranslate nohighlight">\(n_firefighters\)</span>]</p></td>
+<td><p>[0, <span class="math notranslate nohighlight">\(n_{firefighters}\)</span>]</p></td>
 </tr>
 <tr class="row-even"><td><p>Action Shape</p></td>
 <td><p>(<span class="math notranslate nohighlight">\(envs\)</span>, 2)</p></td>
@@ -387,29 +387,25 @@
 <dt class="sig sig-object py" id="free_range_zoo.envs.wildfire.env.structures.configuration.AgentConfiguration">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">free_range_zoo.envs.wildfire.env.structures.configuration.</span></span><span class="sig-name descname"><span class="pre">AgentConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">agents</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.IntTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_reduction_power</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.FloatTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attack_range</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressant_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_suppressant</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressant_decrease_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressant_refill_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_equipment_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">equipment_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.FlaotTensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repair_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degrade_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical_error_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_capacity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tank_switch_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">possible_capacities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capacity_probabilities</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">torch.Tensor</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/free_range_zoo/envs/wildfire/env/structures/configuration.html#AgentConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#free_range_zoo.envs.wildfire.env.structures.configuration.AgentConfiguration" title="Link to this definition">¶</a></dt>
 <dd><p>Setting for configuring agent properties in the environment.</p>
-<dl class="simple">
-<dt>General Attributes:</dt><dd><p>agents: torch.IntTensor - Tensor representing the location of each agent
-fire_reduction_power: torch.FloatTensor - Power of each agent to reduce the fire intensity
-attack_range: torch.Tensor - Range of attack for each agent</p>
-</dd>
-<dt>Suppressant Attributes:</dt><dd><p>suppressant_states: int - Number of suppressant states
-initial_suppressant: int - Initial suppressant value for each agent
-suppressant_decrease_probability: float - Probability of suppressant decrease
-suppressant_refill_probability: float - Probability of suppressant refill</p>
-</dd>
-<dt>Equipment Attributes:</dt><dd><p>intial_equipment_state: int - Initial equipment state for each agent
-equipment_states: torch.FloatTensor - Definition of equipment states modifiers in the form of (capacity, power, range)
-repair_probability: float - Probability that an agent get their repaired equipment once fully damaged
-degrade_probability: float - Probability that an agent’s tank will degrade
-critical_error_probability: float - Probability that an agent at full will suffer a critical error</p>
-</dd>
-<dt>Suppressant Tank Attributes:</dt><dd><p>tank_switch_probability: float - Probability that an agent will be supplied with a different tank on refill
-possible_capacities: torch.Tensor - Possible maximum suppressant values
-capacity_probabilities: torch.Tensor - Probability that each suppressant maximum is chosen</p>
-</dd>
-<dt>Calculated Attributes:</dt><dd><p>num_agents: int - Number of agents
-max_fire_reduction_power: float - Maximum fire reduction power of the agents
-num_equipment_states: int - Number of equipment states</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>agents</strong> (<em>torch.IntTensor</em>) – torch.IntTensor - Tensor representing the location of each agent</p></li>
+<li><p><strong>fire_reduction_power</strong> (<em>torch.FloatTensor</em>) – torch.FloatTensor - Power of each agent to reduce the fire intensity</p></li>
+<li><p><strong>attack_range</strong> (<em>torch.Tensor</em>) – torch.Tensor - Range of attack for each agent</p></li>
+<li><p><strong>suppressant_states</strong> (<em>int</em>) – int - Number of suppressant states</p></li>
+<li><p><strong>initial_suppressant</strong> (<em>int</em>) – int - Initial suppressant value for each agent</p></li>
+<li><p><strong>suppressant_decrease_probability</strong> (<em>float</em>) – float - Probability of suppressant decrease</p></li>
+<li><p><strong>suppressant_refill_probability</strong> (<em>float</em>) – float - Probability of suppressant refill</p></li>
+<li><p><strong>intial_equipment_state</strong> – int - Initial equipment state for each agent</p></li>
+<li><p><strong>equipment_states</strong> (<em>torch.FlaotTensor</em>) – torch.FloatTensor - Definition of equipment states modifiers in the form of (capacity, power, range)</p></li>
+<li><p><strong>repair_probability</strong> (<em>float</em>) – float - Probability that an agent get their repaired equipment once fully damaged</p></li>
+<li><p><strong>degrade_probability</strong> (<em>float</em>) – float - Probability that an agent’s tank will degrade</p></li>
+<li><p><strong>critical_error_probability</strong> (<em>float</em>) – float - Probability that an agent at full will suffer a critical error</p></li>
+<li><p><strong>tank_switch_probability</strong> (<em>float</em>) – float - Probability that an agent will be supplied with a different tank on refill</p></li>
+<li><p><strong>possible_capacities</strong> (<em>torch.Tensor</em>) – torch.Tensor - Possible maximum suppressant values</p></li>
+<li><p><strong>capacity_probabilities</strong> (<em>torch.Tensor</em>) – torch.Tensor - Probability that each suppressant maximum is chosen</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -428,23 +424,14 @@ num_equipment_states: int - Number of equipment states</p>
 <li><p><strong>intensity_decrease_probability</strong> (<em>float</em>) – float - Probability of fire intensity decrease</p></li>
 <li><p><strong>extra_power_decrease_bonus</strong> (<em>float</em>) – float - Additional decrease bonus per extra power</p></li>
 <li><p><strong>burnout_probability</strong> (<em>float</em>) – float - Probability of fire burnout</p></li>
+<li><p><strong>base_spread_rate</strong> (<em>float</em>) – float - Base spread rate of the fire</p></li>
+<li><p><strong>max_spread_rate</strong> (<em>float</em>) – float - Maximum spread rate of the fire</p></li>
+<li><p><strong>random_ignition_probability</strong> (<em>float</em>) – float - Probability of random ignition</p></li>
+<li><p><strong>cell_size</strong> (<em>float</em>) – float - Size of each cell</p></li>
+<li><p><strong>wind_direction</strong> (<em>float</em>) – float - Direction of the wind (radians)</p></li>
+<li><p><strong>ignition_temp</strong> (<em>torch.IntTensor</em>) – torch.IntTensor - Initial intensity of each fire once ignited</p></li>
+<li><p><strong>initial_fuel</strong> (<em>int</em>) – int - Initial fuel value of each cell in the grid, controls the number of re-ignitions</p></li>
 </ul>
-</dd>
-</dl>
-<dl class="simple">
-<dt>Fire Spreads Attributes:</dt><dd><p>base_spread_rate: float - Base spread rate of the fire
-max_spread_rate: float - Maximum spread rate of the fire
-random_ignition_probability: float - Probability of random ignition
-cell_size: float - Size of each cell
-wind_direction: float - Direction of the wind (radians)
-ignition_temp: torch.IntTensor - Initial intensity of each fire once ignited
-initial_fuel: int - Initial fuel value of each cell in the grid, controls the number of re-ignitions</p>
-</dd>
-<dt>Calculated Attributes:</dt><dd><p>realistic_burnout_probability: float - Burnout probability with realistic spread rates
-burned_out: int - Burned out fire state
-almost_burned_out: int - Almost burned out fire state
-max_fire_type: int - Maximum fire type
-realistic_spread_rates: List[float] - Spread rates in each direction calculated with wind direction</p>
 </dd>
 </dl>
 </dd></dl>
@@ -469,23 +456,23 @@ realistic_spread_rates: List[float] - Spread rates in each direction calculated 
 <dt class="sig sig-object py" id="free_range_zoo.envs.wildfire.env.structures.configuration.StochasticConfiguration">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">free_range_zoo.envs.wildfire.env.structures.configuration.</span></span><span class="sig-name descname"><span class="pre">StochasticConfiguration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">special_burnout_probability</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressant_refill</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">suppressant_decrease</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tank_switch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">critical_error</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degrade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repair</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_increase</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_decrease</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_spread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">realistic_fire_spread</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_fire_ignition</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fire_fuel</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/free_range_zoo/envs/wildfire/env/structures/configuration.html#StochasticConfiguration"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#free_range_zoo.envs.wildfire.env.structures.configuration.StochasticConfiguration" title="Link to this definition">¶</a></dt>
 <dd><p>Configuration for the stochastic elements of the environment.</p>
-<dl class="simple">
-<dt>General Fire Attributes:</dt><dd><p>special_burnout_probability: bool - Whether to use special burnout probabilities</p>
-</dd>
-<dt>Stochastic Suppressant Attributes:</dt><dd><p>suppressant_refill: bool - Whether suppressants refill stochastically
-suppressant_decrease: bool - Whether suppressants decrease stochastically</p>
-</dd>
-<dt>Stochastic Equipment Attributes:</dt><dd><p>tank_switch: bool - Whether to use stochastic tank switching
-critical_error: bool - Whether equipment state can have a critical error
-degrade: bool - Whether equipment state stochastically degrades
-repair: bool - Whether equipment state stochastically repairs</p>
-</dd>
-<dt>Stochastic Fire Attributes:</dt><dd><p>fire_decrease: bool - Whether fires decrease stochastically
-fire_increase: bool - Whether fires increase stochastically
-fire_spread: bool - Whether fires spread
-realistic_fire_spread: bool - Whether fires spread realistically
-random_fire_ignition: bool - Whether fires can ignite randomly
-fire_fuel: bool - Whether fires consume fuel and have limited ignitions</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>special_burnout_probability</strong> (<em>bool</em>) – bool - Whether to use special burnout probabilities</p></li>
+<li><p><strong>suppressant_refill</strong> (<em>bool</em>) – bool - Whether suppressants refill stochastically</p></li>
+<li><p><strong>suppressant_decrease</strong> (<em>bool</em>) – bool - Whether suppressants decrease stochastically</p></li>
+<li><p><strong>tank_switch</strong> (<em>bool</em>) – bool - Whether to use stochastic tank switching</p></li>
+<li><p><strong>critical_error</strong> (<em>bool</em>) – bool - Whether equipment state can have a critical error</p></li>
+<li><p><strong>degrade</strong> (<em>bool</em>) – bool - Whether equipment state stochastically degrades</p></li>
+<li><p><strong>repair</strong> (<em>bool</em>) – bool - Whether equipment state stochastically repairs</p></li>
+<li><p><strong>fire_decrease</strong> (<em>bool</em>) – bool - Whether fires decrease stochastically</p></li>
+<li><p><strong>fire_increase</strong> (<em>bool</em>) – bool - Whether fires increase stochastically</p></li>
+<li><p><strong>fire_spread</strong> (<em>bool</em>) – bool - Whether fires spread</p></li>
+<li><p><strong>realistic_fire_spread</strong> (<em>bool</em>) – bool - Whether fires spread realistically</p></li>
+<li><p><strong>random_fire_ignition</strong> (<em>bool</em>) – bool - Whether fires can ignite randomly</p></li>
+<li><p><strong>fire_fuel</strong> (<em>bool</em>) – bool - Whether fires consume fuel and have limited ignitions</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -499,14 +486,11 @@ fire_fuel: bool - Whether fires consume fuel and have limited ignitions</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>grid_width</strong> (<em>int</em>) – int - Width of the grid</p></li>
 <li><p><strong>grid_height</strong> (<em>int</em>) – int - Height of the grid</p></li>
+<li><p><strong>fire_configuration</strong> – FireConfiguration - Configuration for the fire properties</p></li>
+<li><p><strong>agent_configuration</strong> – AgentConfiguration - Configuration for the agent properties</p></li>
+<li><p><strong>reward_configuration</strong> – RewardConfiguration - Configuration for the environment rewards</p></li>
+<li><p><strong>stochastic_configuration</strong> – StochasticConf - Configuration for the stochastic elements</p></li>
 </ul>
-</dd>
-</dl>
-<dl class="simple">
-<dt>Configuration Attributes:</dt><dd><p>fire_configuration: FireConfiguration - Configuration for the fire properties
-agent_configuration: AgentConfiguration - Configuration for the agent properties
-reward_configuration: RewardConfiguration - Configuration for the environment rewards
-stochastic_configuration: StochasticConf - Configuration for the stochastic elements</p>
 </dd>
 </dl>
 </dd></dl>
