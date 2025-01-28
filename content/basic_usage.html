@@ -8,7 +8,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="A FreeRangeZoo extension for Openness" />
     <meta property="og:url" content="None" /><meta name="twitter:card" content="summary_large_image"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Environment Creation" href="environment_creation.html" /><link rel="prev" title="Core Research Applications" href="../index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Environment API" href="environment_creation.html" /><link rel="prev" title="Core Research Applications" href="../index.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.4.7 and Furo 2023.08.19.dev1 -->
         <title>Basic Usage - free-range-zoo Documentation</title>
@@ -187,14 +187,26 @@
   <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current">
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Basic Usage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment_creation.html">Environment Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment_tests.html">Testing Environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_creation.html">Environment API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_usage.html">Environment Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../environments/cybersecurity.html">Cybersecurity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../environments/rideshare.html">Rideshare</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../environments/wildfire.html">Wildfire</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/wildfire/index.html">Wildfire</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Wildfire</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environments/wildfire/specification.html">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/wildfire/baselines.html">Baselines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/cybersecurity/index.html">Cybersecurity</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Cybersecurity</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environments/cybersecurity/specification.html">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/cybersecurity/baselines.html">Baselines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/rideshare/index.html">Rideshare</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Rideshare</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environments/rideshare/specification.html">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/rideshare/baselines.html">Baselines</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -250,25 +262,52 @@
 <h1>Basic Usage<a class="headerlink" href="#basic-usage" title="Link to this heading">¶</a></h1>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
-<p>To install the base free-range-zoo library:</p>
-<ol class="arabic simple">
-<li><p>clone our <a class="reference external" href="https://github.com/oasys-mas/free-range-zoo">oasys-mas/free-range-zoo</a></p></li>
-<li><p>locally install <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code></p></li>
-</ol>
-<p>Alternatively</p>
-<ol class="arabic simple" start="2">
-<li><p>install dependencies via poetry <code class="docutils literal notranslate"><span class="pre">poetry</span> <span class="pre">install</span></code></p></li>
-<li><p>execute experiments through <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">free-range-zoo.&lt;experiment</span> <span class="pre">path&gt;</span></code></p></li>
-</ol>
-<p>At the moment we only support Python 3.12</p>
+<p><strong>Prerequisites:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">python=^3.12</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">poetry=^1.8</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cargo=^1.82.0</span></code></p></li>
+</ul>
+<p>To install the <code class="docutils literal notranslate"><span class="pre">free-range-zoo</span></code> library:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone the repository</span>
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:oasys-mas/free-range-zoo.git
+<span class="nb">cd</span><span class="w"> </span>free-range-zoo
+
+<span class="c1"># Install dependency packages</span>
+poetry<span class="w"> </span>install<span class="w"> </span><span class="o">[[</span>--with<span class="w"> </span>models<span class="o">]]</span><span class="w"> </span><span class="c1"># NOTE: `--with model` option is intended only for internal OASYS-MAS use.</span>
+
+<span class="c1"># Verify that CUDA drivers are present and working</span>
+<span class="c1"># NOTE: Only necessary if you are expecting to run on CUDA / GPU</span>
+python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;import torch; print(torch.cuda.is_available())&quot;</span>
+</pre></div>
+</div>
+<p>At the moment only Python <code class="docutils literal notranslate"><span class="pre">3.12</span></code> is directly supported, however it is likely that <code class="docutils literal notranslate"><span class="pre">free-range-zoo</span></code> is also compatible
+with <code class="docutils literal notranslate"><span class="pre">3.11</span></code> and <code class="docutils literal notranslate"><span class="pre">3.13</span></code>.</p>
 </section>
 <section id="initializing-environments">
 <h2>Initializing Environments<a class="headerlink" href="#initializing-environments" title="Link to this heading">¶</a></h2>
-<p>Our environments differ slightly from <code class="docutils literal notranslate"><span class="pre">pettingzoo</span></code> in two aspects. Our environments operate in vectorized <em>batches</em>. This can be exploited to run multiple independent environment instances simultaneously. Additionally, our environments use standard <code class="docutils literal notranslate"><span class="pre">Configuration</span></code> objects to organize environment parameters.</p>
-<p>Importing the environment is the same as in pettingzoo.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">free_range_zoo.envs</span> <span class="kn">import</span> <span class="n">rideshare_v0</span>
+<p>Our environments differ slightly from <code class="docutils literal notranslate"><span class="pre">pettingzoo</span></code> in two aspects. Our environments operate in vectorized <em>batches</em>.
+The intention of this is to take advantage of batched computation provided by <code class="docutils literal notranslate"><span class="pre">SIMD</span></code> architectures, and allow for
+multithreaded operations to make environment transitions faster. Additionally, our environments use standard
+<code class="docutils literal notranslate"><span class="pre">Configuration</span></code> objects to organize environment parameters.</p>
+<section id="importing-environments">
+<h3>Importing Environments<a class="headerlink" href="#importing-environments" title="Link to this heading">¶</a></h3>
+<p>The method for importing environments for utilization is identical to pettingzoo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># free-range-zoo</span>
+<span class="kn">from</span> <span class="nn">free_range_zoo.envs</span> <span class="kn">import</span> <span class="n">wildfire_v0</span>
+
+<span class="c1"># pettingzoo</span>
+<span class="kn">from</span> <span class="nn">pettingzoo.butterfly</span> <span class="kn">import</span> <span class="n">pistonball_v6</span>
 </pre></div>
 </div>
+</section>
+<section id="configuring-environments">
+<h3>Configuring Environments<a class="headerlink" href="#configuring-environments" title="Link to this heading">¶</a></h3>
+<p>In order to make environments more flexible and parameterize transitions, <code class="docutils literal notranslate"><span class="pre">free-range-zoo</span></code> utilizes <code class="docutils literal notranslate"><span class="pre">Configuration</span></code>
+classes to group parameters for the environment. Each environment’s respective <code class="docutils literal notranslate"><span class="pre">Configuration</span></code> objects and structure
+are documented in their <strong>Specification</strong> page, and implementations are included in
+<code class="docutils literal notranslate"><span class="pre">envs/&lt;environment_name&gt;/env/structures/configuration.py</span></code>.</p>
+<p>For simplicity, generators for configurations have been included with the competition materials.</p>
 <p>Then we import the default configuration for the environment. <code class="docutils literal notranslate"><span class="pre">defaultConfiguration</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">Configuration</span></code> class whose attributes are groups of parameters for the environment.</p>
 <p>In rideshare, <code class="docutils literal notranslate"><span class="pre">GridConfiguration</span></code>, <code class="docutils literal notranslate"><span class="pre">PassengerConfiguration</span></code>, <code class="docutils literal notranslate"><span class="pre">AgentConfiguration</span></code>, and <code class="docutils literal notranslate"><span class="pre">RewardConfiguration</span></code> are these seperate attributes. Each of these are a dataclass which contain parameters. To see the details of these configurations go to the environment page in this doc.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">free_range_zoo.envs.rideshare</span> <span class="kn">import</span> <span class="n">defaultConfiguration</span>
@@ -291,6 +330,7 @@
 <span class="p">)</span>
 </pre></div>
 </div>
+</section>
 </section>
 <section id="interacting-with-environments">
 <h2>Interacting With Environments<a class="headerlink" href="#interacting-with-environments" title="Link to this heading">¶</a></h2>
@@ -355,7 +395,7 @@
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Environment Creation</div>
+                <div class="title">Environment API</div>
               </div>
               <svg class="furo-related-icon">
                 <use href="#svg-arrow-right"></use>
@@ -409,7 +449,11 @@
               <ul>
 <li><a class="reference internal" href="#">Basic Usage</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
-<li><a class="reference internal" href="#initializing-environments">Initializing Environments</a></li>
+<li><a class="reference internal" href="#initializing-environments">Initializing Environments</a><ul>
+<li><a class="reference internal" href="#importing-environments">Importing Environments</a></li>
+<li><a class="reference internal" href="#configuring-environments">Configuring Environments</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#interacting-with-environments">Interacting With Environments</a></li>
 </ul>
 </li>

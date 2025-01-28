@@ -8,10 +8,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="A FreeRangeZoo extension for Openness" />
     <meta property="og:url" content="None" /><meta name="twitter:card" content="summary_large_image"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Testing Environments" href="environment_tests.html" /><link rel="prev" title="Basic Usage" href="basic_usage.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Environment Usage" href="environment_usage.html" /><link rel="prev" title="Basic Usage" href="basic_usage.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.png"/><!-- Generated with Sphinx 7.4.7 and Furo 2023.08.19.dev1 -->
-        <title>Environment Creation - free-range-zoo Documentation</title>
+        <title>Environment API - free-range-zoo Documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=3e7f4c72" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=49cbaffd" />
@@ -187,14 +187,26 @@
   <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="basic_usage.html">Basic Usage</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Environment Creation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="environment_tests.html">Testing Environments</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Environment API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="environment_usage.html">Environment Usage</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Environments</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../environments/cybersecurity.html">Cybersecurity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../environments/rideshare.html">Rideshare</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../environments/wildfire.html">Wildfire</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/wildfire/index.html">Wildfire</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Wildfire</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environments/wildfire/specification.html">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/wildfire/baselines.html">Baselines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/cybersecurity/index.html">Cybersecurity</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Cybersecurity</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environments/cybersecurity/specification.html">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/cybersecurity/baselines.html">Baselines</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../environments/rideshare/index.html">Rideshare</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Rideshare</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../environments/rideshare/specification.html">Specification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../environments/rideshare/baselines.html">Baselines</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
@@ -246,22 +258,21 @@
           </div>
           <article role="main">
             
-            <section class="tex2jax_ignore mathjax_ignore" id="environment-creation">
-<h1>Environment Creation<a class="headerlink" href="#environment-creation" title="Link to this heading">¶</a></h1>
-<p>Here we describe how to create a new free-range-zoo (frz) environment focusing on the differences between a frz environment and a pettingzoo environment. For our unittest framework see testing-environments.</p>
-<p>If you have no experience with pettingzoo environments we recommend viewing pettingzoo’s environment creation page.</p>
+            <section class="tex2jax_ignore mathjax_ignore" id="environment-api">
+<h1>Environment API<a class="headerlink" href="#environment-api" title="Link to this heading">¶</a></h1>
+<p>Here we describe the schema of a <code class="docutils literal notranslate"><span class="pre">free-range-zoo</span></code> environment focusing on the differences between a <code class="docutils literal notranslate"><span class="pre">free-range-zoo</span></code>
+environment and a <code class="docutils literal notranslate"><span class="pre">pettingzoo</span></code> environment.</p>
 <section id="directory-structure">
 <h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Link to this heading">¶</a></h2>
-<p>We follow a structure similar to <code class="docutils literal notranslate"><span class="pre">Gymnasium</span></code>, but with a few more required files</p>
+<p>Each environment follows the same directory structure for defining environment dynamics.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>envs
 ├── &lt;environment&gt;               #   &lt;Environment implementation&gt;
 │   ├── configs                 #       Benchmark configurations
 │   └── env                     #       Environment definitions
 │       ├── spaces              #           Action / observation spaces
-│       ├── structures          #           
+│       ├── structures          #
 |       | |_ configuration.py   #           &quot;Configuration&quot; for env settings
 |       | |_ state.py           #           &quot;State&quot; class to store curr state
-|       |  
 │       ├── transitions         #           Environment transition functions
 │       ├── utils               #           Misc. tools
 │       └── &lt;environment&gt;.py    #       Main environment definition
@@ -473,8 +484,8 @@
 <p>Each of our domains utilize a <code class="docutils literal notranslate"><span class="pre">OneOf</span></code> space to indicate different tasks’ action spaces.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#See a list of task-action spaces grouped into a OneOf space</span>
 <span class="n">OneOf</span><span class="p">([</span>
-    <span class="n">Discrete</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="c1">#a fire we can Attack:0 </span>
-    <span class="n">Discrete</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="c1"># a fire we can Attack:0 or Hold back:1 </span>
+    <span class="n">Discrete</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="c1">#a fire we can Attack:0</span>
+    <span class="n">Discrete</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="c1"># a fire we can Attack:0 or Hold back:1</span>
     <span class="c1">#(Hold back doesn&#39;t exist in wildfire)</span>
 <span class="p">])</span>
 </pre></div>
@@ -503,7 +514,7 @@
 <span class="sd">    This function should be called:</span>
 <span class="sd">    - At the end of raw_env.__init__()</span>
 <span class="sd">    - After step()  ?we do this for you</span>
-<span class="sd">    - After reset() </span>
+<span class="sd">    - After reset()</span>
 <span class="sd">    - After reset_batches() ?this can provide a optional parameter batches:List[int] which determines a subset of batches to update the actions of.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="o">...</span>
@@ -538,9 +549,9 @@
 
     <span class="c1">#&lt;#Agents present/visible -1, #agent features&gt;</span>
     <span class="s1">&#39;others&#39;</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">(</span> <span class="n">other</span> <span class="n">agent</span> <span class="n">observation</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">last</span> <span class="n">other</span> <span class="n">agent</span> <span class="n">obs</span> <span class="p">),</span>
-    
+
     <span class="c1">#&lt;#tasks present/visible, #task features&gt;</span>
-    <span class="s1">&#39;tasks&#39;</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">(</span> <span class="n">task</span> <span class="n">observation</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">last</span> <span class="n">task</span> <span class="n">observation</span><span class="p">)</span> 
+    <span class="s1">&#39;tasks&#39;</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">(</span> <span class="n">task</span> <span class="n">observation</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="n">last</span> <span class="n">task</span> <span class="n">observation</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="n">batch_dim</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#for the observation, for the spaces, this is in a list</span>
 </pre></div>
@@ -555,7 +566,7 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Updates the observations for each agent and batch.</span>
 <span class="sd">    This should be vectorized.</span>
-<span class="sd">    </span>
+
 <span class="sd">    This should set the self.observations attribute to be the current observations</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -593,12 +604,12 @@
         <footer>
           
           <div class="related-pages">
-            <a class="next-page" href="environment_tests.html">
+            <a class="next-page" href="environment_usage.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Testing Environments</div>
+                <div class="title">Environment Usage</div>
               </div>
               <svg class="furo-related-icon">
                 <use href="#svg-arrow-right"></use>
@@ -650,7 +661,7 @@
           <div class="toc-tree-container">
             <div class="toc-tree">
               <ul>
-<li><a class="reference internal" href="#">Environment Creation</a><ul>
+<li><a class="reference internal" href="#">Environment API</a><ul>
 <li><a class="reference internal" href="#directory-structure">Directory Structure</a></li>
 <li><a class="reference internal" href="#state">State</a><ul>
 <li><a class="reference internal" href="#states-vs-transition-lookups">States vs Transition lookups</a></li>
